@@ -19,9 +19,9 @@ jobs:
   buildImage:
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: read
-      id-token: write
+    # permissions:
+    #   contents: read
+    #   id-token: write
     
     steps:
       # Checks out the repository this file is in
