@@ -14,6 +14,7 @@ on:
 env:
   AZURE_CONTAINER_REGISTRY: "nakhlaai"
   CONTAINER_NAME: "mvp-web-app"
+  CONTAINER_NAMESPACE: "frontend"
   CLUSTER_NAME: "nakhlaai-k8s-cluster"
   RESOURCE_GROUP: "nakhlaai_k8s"
   KUSTOMIZE_PATH: "nakhlaai/k8s-config/apps/mvp-web-app"
@@ -99,5 +100,6 @@ jobs:
         with:
           action: deploy
           manifests: ${{ steps.bake.outputs.manifestsBundle }}
+          namespace: ${{ env.CONTAINER_NAMESPACE }}
           images: |
             ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/${{ env.CONTAINER_NAME }}:${{ github.sha }}
