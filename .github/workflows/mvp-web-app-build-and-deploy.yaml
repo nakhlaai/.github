@@ -1,17 +1,12 @@
 name: deploy
 
 on:
-  push:
-    branches:
-      - main
-
-# on:
-#   workflow_call:
-#     inputs:
-#       # tag:
-#       #   description: Image tag
-#       #   required: true
-#       #   type: string
+  workflow_call:
+    inputs:
+      # tag:
+      #   description: Image tag
+      #   required: true
+      #   type: string
 
 env:
   AZURE_CONTAINER_REGISTRY: "nakhlaai.azurecr.io"
