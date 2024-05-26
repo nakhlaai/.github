@@ -70,7 +70,7 @@ jobs:
           use-kubelogin: 'true'
 
       # Checkout kubernetes config folder files
-      - name: Checkout k8s-config
+      - name: Run actions/checkout@v4 to checkout nakhlaai/k8s-config
         uses: actions/checkout@v4
         with:
           # Repository name with owner. For example, actions/checkout
@@ -78,12 +78,6 @@ jobs:
           repository: 'nakhlaai/k8s-config'
           path: nakhlaai/k8s-config
           token: ${{ secrets.GH_PAT }}
-      
-      - name: Echo
-        run: |
-          ls -al
-          cd nakhlaai
-          ls -al
 
       # Runs Kustomize to create manifest files
       - name: Bake deployment
