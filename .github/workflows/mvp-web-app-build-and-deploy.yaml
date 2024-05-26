@@ -17,7 +17,7 @@ env:
 jobs:
   buildImage:
     runs-on: ubuntu-latest
-    secrets: inherit
+    
     steps:
       # Checks out the repository this file is in
       - uses: actions/checkout@v4
