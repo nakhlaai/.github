@@ -12,7 +12,7 @@ env:
   CONTAINER_NAME: "mvp-web-app"
   CLUSTER_NAME: "nakhlaai-k8s-cluster"
   RESOURCE_GROUP: "nakhlaai_k8s"
-  KUSTOMIZE_PATH: "nakhlaai/k8s_config/apps/mvp-web-app"
+  KUSTOMIZE_PATH: "./nakhlaai/k8s_config/apps/mvp-web-app/"
 
 jobs:
   buildImage:
@@ -63,6 +63,14 @@ jobs:
           cluster-name: ${{ env.CLUSTER_NAME }}
           admin: 'false'
           use-kubelogin: 'true'
+
+      # Checkout kubernetes config folder files
+      - name: Checkout k8s-config
+        uses: actions/checkout@v4
+        with:
+          # Repository name with owner. For example, actions/checkout
+          # Default: ${{ github.repository }}
+          repository: 'nakhlaai/k8s-config'
 
       # Runs Kustomize to create manifest files
       - name: Bake deployment
