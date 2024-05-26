@@ -16,7 +16,7 @@ env:
   CONTAINER_NAME: "mvp-web-app"
   CLUSTER_NAME: "nakhlaai-k8s-cluster"
   RESOURCE_GROUP: "nakhlaai_k8s"
-  KUSTOMIZE_PATH: "./nakhlaai/k8s_config/apps/mvp-web-app/"
+  KUSTOMIZE_PATH: "nakhlaai/k8s_config/apps/mvp-web-app/"
 
 jobs:
   buildImage:
@@ -80,6 +80,8 @@ jobs:
       
       - name: Echo
         run: |
+          ls -al
+          cd nakhlaai
           ls -al
 
       # Runs Kustomize to create manifest files
