@@ -1,7 +1,12 @@
 name: deploy
 
 on:
-  workflow_call
+  workflow_call:
+    secrets:
+      AZURE_CREDENTIALS:
+        description: azure credentials
+        required: true
+        type: string
 
 env:
   AZURE_CONTAINER_REGISTRY: "nakhlaai.azurecr.io"
