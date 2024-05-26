@@ -10,7 +10,6 @@ on:
 env:
   AZURE_CONTAINER_REGISTRY: "nakhlaai.azurecr.io"
   CONTAINER_NAME: "mvp-web-app"
-  RESOURCE_GROUP: "nakhlaai_k8s"
   CLUSTER_NAME: "nakhlaai-k8s-cluster"
   # KUSTOMIZE_PATH: "your-kustomize-path"
 
@@ -31,4 +30,4 @@ jobs:
       # Builds and pushes an image up to your Azure Container Registry
       - name: Build and push image to ACR
         run: |
-          az acr build --image ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/${{ env.CONTAINER_NAME }}:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.RESOURCE_GROUP }} .
+          az acr build --image ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/${{ env.CONTAINER_NAME }}:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} .
