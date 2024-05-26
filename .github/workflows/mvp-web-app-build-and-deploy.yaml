@@ -1,12 +1,7 @@
 name: deploy
 
 on:
-  workflow_call #:
-    # inputs:
-    #   tag:
-    #     description: Image tag
-    #     required: true
-    #     type: string
+  workflow_call
 
 env:
   AZURE_CONTAINER_REGISTRY: "nakhlaai.azurecr.io"
@@ -18,10 +13,6 @@ env:
 jobs:
   buildImage:
     runs-on: ubuntu-latest
-
-    # permissions:
-    #   contents: read
-    #   id-token: write
     
     steps:
       # Checks out the repository this file is in
