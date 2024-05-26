@@ -6,7 +6,6 @@ on:
       AZURE_CREDENTIALS:
         description: azure credentials
         required: true
-        type: string
 
 env:
   AZURE_CONTAINER_REGISTRY: "nakhlaai.azurecr.io"
