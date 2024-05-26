@@ -6,6 +6,10 @@ on:
       AZURE_CREDENTIALS:
         description: azure credentials
         required: true
+      
+      GH_PAT:
+        description: github personal access token to access other repos
+        required: true 
 
 env:
   AZURE_CONTAINER_REGISTRY: "nakhlaai"
@@ -72,7 +76,7 @@ jobs:
           # Default: ${{ github.repository }}
           repository: 'nakhlaai/k8s-config'
           path: ./nakhlaai/k8s-config
-          ssh-key: ${{ secrets.PAT }}
+          token: ${{ secrets.GH_PAT }}
       
       - name: Echo
         run: |
