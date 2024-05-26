@@ -16,7 +16,7 @@ env:
   CONTAINER_NAME: "mvp-web-app"
   CLUSTER_NAME: "nakhlaai-k8s-cluster"
   RESOURCE_GROUP: "nakhlaai_k8s"
-  KUSTOMIZE_PATH: "nakhlaai/k8s_config/apps/mvp-web-app/"
+  KUSTOMIZE_PATH: "nakhlaai/k8s-config/apps/mvp-web-app"
 
 jobs:
   buildImage:
@@ -75,7 +75,7 @@ jobs:
           # Repository name with owner. For example, actions/checkout
           # Default: ${{ github.repository }}
           repository: 'nakhlaai/k8s-config'
-          path: ./nakhlaai/k8s-config
+          path: nakhlaai/k8s-config
           token: ${{ secrets.GH_PAT }}
       
       - name: Echo
