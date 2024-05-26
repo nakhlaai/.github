@@ -8,7 +8,7 @@ on:
         required: true
 
 env:
-  AZURE_CONTAINER_REGISTRY: "nakhlaai.azurecr.io"
+  AZURE_CONTAINER_REGISTRY: "nakhlaai"
   CONTAINER_NAME: "mvp-web-app"
   CLUSTER_NAME: "nakhlaai-k8s-cluster"
   # KUSTOMIZE_PATH: "your-kustomize-path"
