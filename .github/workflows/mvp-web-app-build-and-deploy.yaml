@@ -71,6 +71,10 @@ jobs:
           # Repository name with owner. For example, actions/checkout
           # Default: ${{ github.repository }}
           repository: 'nakhlaai/k8s-config'
+      
+      - name: Echo
+        run: |
+          ls -al
 
       # Runs Kustomize to create manifest files
       - name: Bake deployment
